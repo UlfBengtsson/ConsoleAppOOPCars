@@ -4,11 +4,12 @@ using System.Text;
 
 namespace ConsoleAppOOPCars
 {
-    class Car
+    public class Car
     {
     //All members (states or behaviors will have by default the access modefier of privet)
 
     //States
+
         //Fields
         string engine;//default value is null for string
         bool engineIsOn;//default value is false for bool
@@ -36,20 +37,23 @@ namespace ConsoleAppOOPCars
             }
         }
 
+        public bool EngineIsOn
+        {
+            get { return engineIsOn; }
+        }
+
     //Behavior
 
         //Constructor(s)
-            //if there is no constructor, c# will make a Zero constructor and use it.
+        //if there is no constructor, c# will make a Zero constructor and use it.
         public Car(string modelName, string color)
         {
             this.modelName = modelName;
             Color = color;
         }
 
-        public Car(string modelName, string color, int modelYear, string engineType)
+        public Car(string modelName, string color, int modelYear, string engineType) : this(modelName, color)
         {
-            this.modelName = modelName;
-            this.Color = color;
             this.modelYear = modelYear;
             this.engine = engineType;
         }
